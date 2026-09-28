@@ -294,3 +294,14 @@ terraform destroy -var="db_password=VeryStrong123!"
 ## 👤 Автор
 
 **Муленко И.С.** — итоговый проект
+
+Скриншоты:
+
+<img width="1215" height="193" alt="image" src="https://github.com/user-attachments/assets/b86a2069-c133-4a4a-87ac-d90082dbbeec" />
+
+<img width="1418" height="846" alt="image" src="https://github.com/user-attachments/assets/17c8dc31-9888-44c2-a8da-505e5ea984dd" />
+
+<img width="1213" height="134" alt="image" src="https://github.com/user-attachments/assets/29875625-38d2-4d78-9524-62ad95d5517c" />
+
+<img width="755" height="498" alt="image" src="https://github.com/user-attachments/assets/4b352a01-9d53-4946-9007-641f2a0b83e1" />
+
