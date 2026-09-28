@@ -1,4 +1,4 @@
-# Итоговый проект: Развертывание инфраструктуры в Yandex Cloud связный репозиторий и образ + 
+# Итоговый проект: Развертывание инфраструктуры в Yandex Cloud связный репозиторий и образ + https://github.com/Ayrin24/bootstrap-.git + образ там же в архиве
 
 Развертывание полноценной инфраструктуры в Yandex Cloud с помощью Terraform: VPC, подсеть, виртуальная машина, MySQL-кластер, Container Registry и Lockbox. Docker и Docker Compose устанавливаются через `cloud-init`, web-приложение запускается из Container Registry и подключается к управляемой БД.
 
