@@ -1,0 +1,36 @@
+#cloud-config
+package_update: true
+
+packages:
+  - docker.io
+  - docker-compose-v2
+  - curl
+
+write_files:
+  - path: /opt/app/docker-compose.yaml
+    permissions: '0644'
+    owner: root:root
+    content: |
+      services:
+        web:
+          image: cr.yandex/${registry_id}/webapp:latest
+          container_name: web
+          restart: unless-stopped
+          ports:
+            - "8090:5000"
+          environment:
+            DB_HOST: ${mysql_host}
+            DB_USER: app
+            DB_PASSWORD: ${db_password}
+            DB_NAME: example
+
+runcmd:
+  - systemctl enable --now docker
+  - usermod -aG docker ubuntu
+  # Декодируем key.json из base64
+  - mkdir -p /opt/app
+  - echo "${key_json_base64}" | base64 -d > /opt/app/key.json
+  - chmod 600 /opt/app/key.json
+  # Аутентификация и запуск
+  - cat /opt/app/key.json | docker login --username json_key --password-stdin cr.yandex
+  - cd /opt/app && docker compose up -d
